@@ -1,6 +1,6 @@
 # Satoshi Rewarder
 
-Automation software written in Java, using sikuli, and selenium (currently for Windows only) for a bitcoin reward website.  Automates the whole process of earning satoshis.  Let it run and watch the bitcoins roll in.
+Automation software written in Java, using sikuli, and selenium (currently for Windows only) for a bitcoin reward website.  Automates the whole process of earning satoshis.  Let it run and watch the bitcoins roll in.  Far more profitable than traditional btc mining.
 
 *No Longer Works as of December 2016.  Website was informed of security issue.  And it has since been patched.*
 
