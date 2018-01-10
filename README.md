@@ -12,9 +12,9 @@ Automation software written in Java, using sikuli, and selenium (currently for W
 
 * Bypasses game captcha by faking http header referrals.
 
-* Very stable, runs for days without any problems.
-
 * Sends SMS updates, allowing for user to keep track of progress, money, and any crashes.
+
+* Very stable, runs for days without any problems.
 
 * Fast, hits daily cap everyday.
 
