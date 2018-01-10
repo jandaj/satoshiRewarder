@@ -79,7 +79,7 @@ public class Cycle {
 				e.printStackTrace();
 				next.currentlyPlaying = "";
 				try{
-				next.goTo("http://gamefaucet.com/games");
+				next.goTo("http://gf.com/games");
 				next.scrollTo(800);
 					Bot.wait(200);
 				Bot.recordTimeout(next);

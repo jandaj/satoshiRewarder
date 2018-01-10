@@ -27,12 +27,12 @@ public class Bot {
 	
 	public static boolean internetCheck() { //Checks to make sure computer is online.
 		try {
-			final URL url = new URL("http://gamefaucet.com/");
+			final URL url = new URL("http://gf.com/");
 			final URLConnection connect = url.openConnection();
 			connect.connect();
 			return true;
 		}catch(IOException err) {
-			smsService.sendMessage("No connection to GameFaucet.");
+			smsService.sendMessage("No connection to gf.");
 			return false;
 		}
 	}

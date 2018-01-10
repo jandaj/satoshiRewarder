@@ -121,7 +121,7 @@ public class Account {
 		int credits = this.credits();
 		if(credits>24000) {
 			test = true;
-			this.goTo("http://gamefaucet.com/withdraw");
+			this.goTo("http://gf.com/withdraw");
 			executeScript("window.scrollTo(0,800);");
 			int withdrawAmount;
 			int creditsICanWithdraw;
@@ -142,7 +142,7 @@ public class Account {
 			window.findElementByXPath("//*[@id=\"withdraw_faucetbox\"]/form/div[2]/div/div[2]/button").click();
 		}
 		if(test==true) {
-			this.goTo("http://gamefaucet.com/games");
+			this.goTo("http://gf.com/games");
 		}
 		executeScript("window.scrollTo(0,800)");
 	}
@@ -303,7 +303,7 @@ public class Account {
 		    window.executeScript("window.scrollTo(0,400)");
 		    window.findElementById("import").click();
 		    WebElement inputField = window.findElementById("import_input");
-		    String str = "[{\"id\":\"defaultAction\",\"val\":\"dummy\",\"type\":\"normal\",\"filter\":\"\",\"is3rd\":true},{\"id\":1498421063254,\"val\":\"https://gamefaucet.com/games/nuts/play\",\"type\":\"specific\",\"filter\":\"http://mellowads.com/09iqT\",\"isregexp\":false,\"is3rd\":false,\"isfrom\":true,\"isto\":true},{\"id\":1498421813859,\"val\":\"https://gamefaucet.com/games/pirates/play\",\"type\":\"specific\",\"filter\":\"http://mellowads.com/0Pc59\",\"isregexp\":false,\"is3rd\":false,\"isfrom\":true,\"isto\":true},{\"id\":1498422890718,\"val\":\"https://gamefaucet.com/games/bubble_shooter/play\",\"type\":\"specific\",\"filter\":\"http://mellowads.com/9ngWc\",\"isregexp\":false,\"is3rd\":false,\"isfrom\":true,\"isto\":true},{\"id\":1498422899153,\"val\":\"https://gamefaucet.com/games/flapcat/play\",\"type\":\"specific\",\"filter\":\"http://mellowads.com/2dkzu\",\"isregexp\":false,\"is3rd\":false,\"isfrom\":true,\"isto\":true},{\"id\":1498422904609,\"val\":\"https://gamefaucet.com/games/towerblocks/play\",\"type\":\"specific\",\"filter\":\"http://mellowads.com/2emBk\",\"isregexp\":false,\"is3rd\":false,\"isfrom\":true,\"isto\":true},{\"id\":1498422910785,\"val\":\"\",\"type\":\"normal\",\"filter\":\"\",\"isregexp\":false,\"is3rd\":false,\"isfrom\":true,\"isto\":true}]";
+		    String str = "[{\"id\":\"defaultAction\",\"val\":\"dummy\",\"type\":\"normal\",\"filter\":\"\",\"is3rd\":true},{\"id\":1498421063254,\"val\":\"https://gf.com/games/nuts/play\",\"type\":\"specific\",\"filter\":\"http://mellowads.com/09iqT\",\"isregexp\":false,\"is3rd\":false,\"isfrom\":true,\"isto\":true},{\"id\":1498421813859,\"val\":\"https://gf.com/games/pirates/play\",\"type\":\"specific\",\"filter\":\"http://mellowads.com/0Pc59\",\"isregexp\":false,\"is3rd\":false,\"isfrom\":true,\"isto\":true},{\"id\":1498422890718,\"val\":\"https://gf.com/games/bubble_shooter/play\",\"type\":\"specific\",\"filter\":\"http://mellowads.com/9ngWc\",\"isregexp\":false,\"is3rd\":false,\"isfrom\":true,\"isto\":true},{\"id\":1498422899153,\"val\":\"https://gf.com/games/flapcat/play\",\"type\":\"specific\",\"filter\":\"http://mellowads.com/2dkzu\",\"isregexp\":false,\"is3rd\":false,\"isfrom\":true,\"isto\":true},{\"id\":1498422904609,\"val\":\"https://gf.com/games/towerblocks/play\",\"type\":\"specific\",\"filter\":\"http://mellowads.com/2emBk\",\"isregexp\":false,\"is3rd\":false,\"isfrom\":true,\"isto\":true},{\"id\":1498422910785,\"val\":\"\",\"type\":\"normal\",\"filter\":\"\",\"isregexp\":false,\"is3rd\":false,\"isfrom\":true,\"isto\":true}]";
 		    window.executeScript("arguments[0].value = '" + str + "'", inputField);
 		    window.findElementById("import").click();
 		    window.switchTo().alert().accept();
@@ -317,14 +317,14 @@ public class Account {
 	    }
 	    window.switchTo().window(originalHandle);
 		    //Attempts to login
-	    Cloudflare bypass = new Cloudflare("http://gamefaucet.com/");
+	    Cloudflare bypass = new Cloudflare("http://gf.com/");
 	    List<HttpCookie> cookies = bypass.scrape();
 	    window.manage().addCookie(new Cookie(cookies.get(0).getName(),cookies.get(0).getValue()));
 	    window.manage().addCookie(new Cookie(cookies.get(1).getName(),cookies.get(1).getValue()));
 	    window.manage().addCookie(new Cookie(cookies.get(2).getName(),cookies.get(2).getValue()));
 	    Bot.wait(5500);
 	    while(true) {
-	try {this.goTo("http://gamefaucet.com/login");
+	try {this.goTo("http://gf.com/login");
 	window.findElement(By.name("username")).sendKeys(user);
 	window.findElement(By.name("email")).sendKeys(email);
 	window.findElement(By.name("password")).sendKeys(this.pass + Keys.ENTER);
@@ -344,7 +344,7 @@ public class Account {
     }
 	window.switchTo().window(newTab);
 	}}
-			this.goTo("http://gamefaucet.com/games");
+			this.goTo("http://gf.com/games");
 executeScript("window.scrollTo(0,800);");
 //Records initial timeouts
 	Bot.wait(200);

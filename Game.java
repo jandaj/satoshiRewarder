@@ -7,7 +7,7 @@ public abstract class Game {
 	public static void goBack(Account acc, String type) {
 		try{
 			Bot.wait(200);
-			acc.goTo("http://gamefaucet.com/games");
+			acc.goTo("http://gf.com/games");
 			acc.scrollTo(800);
 			Bot.recordTimeout(acc);
 		}catch(NoSuchElementException e){Bot.recordTimeout(acc);}

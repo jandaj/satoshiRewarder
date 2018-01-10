@@ -10,19 +10,19 @@ public class Towers extends Game{
 	private static Pattern play = new Pattern(Bot.dir + "\\patterns\\towers\\play.PNG").similar((float)0.9);
 	public static void startGame(Account acc) {
 			Bot.wait(200);
-			acc.goTo("http://gamefaucet.com/games/towerblocks");
+			acc.goTo("http://gf.com/games/towerblocks");
 		acc.scrollTo(400);
 		try {
 			Bot.wait(200);
 			acc.window.findElementByXPath("//*[@id='game-page-layout']/div/div/div[2]/div/div[3]/div[2]/form/button").click();
 			Bot.wait(200);
-			acc.goTo("https://gamefaucet.com/games/towerblocks/play");
+			acc.goTo("https://gf.com/games/towerblocks/play");
 				Bot.wait(3000);
 				acc.executeScript("window.adBlock = false");
 			acc.executeScript("window.gameover = true");
 			acc.executeScript("towerblocks.game_over = function(score) {\r\n\t\tif (window.adBlock == true) {\r\n\t\t\ttowerblocks.adblock()\r\n\t\t\t\r\n\t\t\treturn false;\r\n\t\t}\r\n\t\t\r\n\t\t$.ajax({\r\n\t\t\turl: towerblocks.apiURL.game_over,\r\n\t\t\ttype: \"POST\",\r\n\t\t\tdata: { score : Math.floor(Math.random()*40) + 750, bet_prefix: towerblocks.betPrefix},\r\n\t\t\tdataType: \"json\",\r\n\t\t\ttimeout: 30000,\r\n\t\t\tsuccess: function(data){\r\n\t\t\t\tif (!data.success) {\r\n\t\t\t\t\ttowerblocks.set_error_info(data.message);\r\n\t\t\t\t\treturn false;\r\n\t\t\t\t}\r\n\t\t\t\t\r\n\t\t\t\tif (data.result.end) {\r\n\t\t\t\t\tsetTimeout(function() {\r\n\t\t\t\t\t\twindow.gameover = true;\r\n\t\t\t\t\t\twindow.location = towerblocks.get_result_url()\r\n\t\t\t\t\t}, 200);\r\n\t\t\t\t}\r\n\t\t\t},\r\n\t\t\terror: function(data) {\r\n\t\t\t\t//towerblocks.set_error_info(\"The server did not respond\");\r\n\t\t\t}\r\n\t\t});\r\n\t}");
 		}catch(WebDriverException e) {
-			acc.goTo("https://gamefaucet.com/games/towerblocks/play");
+			acc.goTo("https://gf.com/games/towerblocks/play");
 				Bot.wait(3000);
 				acc.executeScript("window.adBlock = false");
 			acc.executeScript("window.gameover = true");
@@ -41,7 +41,7 @@ public class Towers extends Game{
 			acc.currentlyPlaying = type;
 			acc.setThreeMinuteTimeout(180);
 		} catch (FindFailed e) {
-			if(acc.window.getCurrentUrl().equals("http://gamefaucet.com/games/towerblocks/play")){
+			if(acc.window.getCurrentUrl().equals("http://gf.com/games/towerblocks/play")){
 				startGame(acc);
 				}else{
 					goBack(acc,type);
