@@ -1,0 +1,5 @@
+# satoshiRewarder
+
+
+
+##Features
